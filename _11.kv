@@ -1,0 +1,23 @@
+Manager:
+    LoadingScreen:
+    HomeScreen:
+
+<LoadingScreen>:
+    name:"loading"
+    BoxLayout:
+        Label:
+            text:"loading..."
+        Button:
+            text:"continue"
+            on_release:
+                app.root.current = "home_default"
+                root.manager.transition.direction = "left"
+<HomeScreen>:
+    name:"home_default"
+    Label:
+        text:"Home"
+    Button:
+        text:"Back"
+        on_release:
+            app.root.current = "loading"
+            root.manager.transition.direction = "right"
